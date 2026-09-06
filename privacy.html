@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Privacy Policy — Universal Desktop Lyrics</title>
+  <meta name="title" content="Privacy Policy — Universal Desktop Lyrics">
+  <meta name="description"
+    content="Universal Desktop Lyrics is 100% private, offline-friendly, and open source. Zero telemetry, zero tracking, and no accounts required. Read our full privacy policy.">
+  <meta name="author" content="Diwas Dhakal (Diwasdh)">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://diwasdh.github.io/Desktop-Lyrics/privacy.html">
+  <meta name="theme-color" content="#07090e">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diwasdh.github.io/Desktop-Lyrics/privacy.html">
+  <meta property="og:site_name" content="Desktop Lyrics">
+  <meta property="og:title" content="Privacy Policy — Universal Desktop Lyrics">
+  <meta property="og:description"
+    content="Universal Desktop Lyrics is 100% private, offline-friendly, and open source. Zero telemetry, zero tracking, and no accounts required.">
+  <meta property="og:image" content="https://diwasdh.github.io/Desktop-Lyrics/logo_icon.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="logo_icon.svg">
+  <link rel="apple-touch-icon" href="logo_icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-container {
+      max-width: 880px;
+      margin: 120px auto 80px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .legal-header {
+      margin-bottom: 48px;
+      text-align: left;
+    }
+
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #818cf8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .legal-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .legal-meta {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .legal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.25s ease;
+    }
+
+    .legal-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .legal-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .legal-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin: 22px 0 10px;
+    }
+
+    .legal-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .legal-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .legal-card li {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .legal-card li strong {
+      color: var(--text-main);
+    }
+
+    .check-icon {
+      color: #10b981;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .cross-icon {
+      color: #f43f5e;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .highlight-box {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: #c7d2fe;
+    }
+
+    .legal-link {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .legal-link:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .legal-container {
+        margin-top: 90px;
+      }
+      .legal-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Ambient Background Glow -->
+  <div class="ambient-glow" style="top: -100px; left: 10%; width: 500px; height: 500px; background: rgba(99, 102, 241, 0.2);"></div>
+  <div class="ambient-glow" style="top: 30%; right: -50px; width: 600px; height: 600px; background: rgba(168, 85, 247, 0.18);"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logo_icon.svg" alt="Desktop Lyrics Icon" class="nav-logo" width="34" height="34">
+        <span class="nav-title">Desktop Lyrics</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#modes" class="nav-link">Modes</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener" class="nav-link">GitHub</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-primary btn-sm">
+          <span>Get App</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Legal Document Content -->
+  <main class="legal-container">
+    <div class="legal-header">
+      <div class="legal-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Privacy by Design
+      </div>
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-meta">Last updated: <strong>September 7, 2026</strong> • Universal Desktop Lyrics</p>
+    </div>
+
+    <!-- Section 1: Overview & TL;DR -->
+    <article class="legal-card">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1. Summary (TL;DR)
+      </h2>
+      <p>
+        Universal Desktop Lyrics is an open-source, non-commercial software application. We believe your listening habits, personal data, and system activity belong exclusively to you.
+      </p>
+      <div class="highlight-box">
+        <p>
+          <strong>The Core Promise:</strong> We do not collect, track, store, or sell any personal data. There are no tracking cookies, no telemetry beacons, no user accounts, and no advertising trackers.
+        </p>
+      </div>
+      <ul>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Zero Telemetry:</strong> No analytics libraries or diagnostic trackers (e.g. Sentry, Google Analytics, Firebase) are integrated.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>No Logins Required:</strong> You never need to supply an email address, username, or password to use any feature.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Local-Only Audio Detection:</strong> Music detection is performed purely on your machine using native operating system media session APIs.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Transparent Source Code:</strong> 100% of our code is public and verifiable on GitHub under the MIT License.</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Section 2: Local Processing -->
+    <article class="legal-card">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        2. Information Processed Locally on Your Computer
+      </h2>
+      <p>
+        To synchronize scrolling lyrics with your music, the application interacts with your local computer's media transport system:
+      </p>
+
+      <h3>A. Media Playback Metadata</h3>
+      <p>
+        When you play audio in Spotify, Apple Music, YouTube, Chrome, Edge, VLC, or Firefox:
+      </p>
+      <ul>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>What is read:</strong> Track title, artist name, album name, playback status (playing/paused), and current playback position.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>How it is read:</strong> On Windows, via the native WinRT <code>GlobalSystemMediaTransportControlsSessionManager</code>. On macOS, via an AppleScript/JXA bridge connecting directly to Spotify and Apple Music.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Storage:</strong> Processed exclusively in volatile computer memory (RAM) while playing. This data is <strong>never transmitted</strong> to any private server or third party.</span>
+        </li>
+      </ul>
+
+      <h3>B. App Preferences & Appearance</h3>
+      <p>
+        Your selected window mode (Dynamic Island, Floating Widget, Compact Bar, or Full Canvas), chosen theme, window opacity, and hotkey preferences are stored strictly in your browser's local sandbox (<code>localStorage</code>) on your machine.
+      </p>
+
+      <h3>C. Offline Lyrics Cache</h3>
+      <p>
+        When lyrics are retrieved, they are cached locally in your application storage so that repeating songs load instantaneously without re-requesting data from the network.
+      </p>
+    </article>
+
+    <!-- Section 3: Network Requests -->
+    <article class="legal-card">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        3. Network Communications (What Leaves Your Device)
+      </h2>
+      <p>
+        Universal Desktop Lyrics connects to the internet strictly to retrieve public lyrics:
+      </p>
+
+      <h3>A. LRCLIB Public API</h3>
+      <p>
+        When a song starts or when you perform a manual search, the application sends a standard HTTPS request to <strong><a href="https://lrclib.net" target="_blank" rel="noopener" class="legal-link">LRCLIB</a></strong> (an open, community-driven lyrics database).
+      </p>
+      <ul>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Data Sent:</strong> Song title, artist name, and track duration (in seconds) to match timing.</span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>No User Identifiers:</strong> We do not send any user ID, account name, device serial number, or tracking cookies to LRCLIB.</span>
+        </li>
+      </ul>
+
+      <h3>B. GitHub Releases (Update Checks)</h3>
+      <p>
+        When checking for software updates, the application queries the public GitHub Releases API for the Desktop Lyrics repository to compare version numbers. No personal information is provided.
+      </p>
+    </article>
+
+    <!-- Section 4: What We Never Collect -->
+    <article class="legal-card">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+        4. What We Do NOT Collect
+      </h2>
+      <ul>
+        <li>
+          <span class="cross-icon">✖</span>
+          <span><strong>No Personal Information:</strong> We do not collect names, email addresses, phone numbers, or IP logs.</span>
+        </li>
+        <li>
+          <span class="cross-icon">✖</span>
+          <span><strong>No Keystroke Logging:</strong> Global shortcuts (like Ghost Mode toggle <code>Ctrl+Shift+X</code>) are registered strictly through the operating system's standard hotkey manager and evaluated only for app control.</span>
+        </li>
+        <li>
+          <span class="cross-icon">✖</span>
+          <span><strong>No Microphone or Camera Access:</strong> The application does not require, request, or use audio recording permissions.</span>
+        </li>
+        <li>
+          <span class="cross-icon">✖</span>
+          <span><strong>No File Access Outside App Sandboxes:</strong> The application does not scan or read your local file system or browsing history.</span>
+        </li>
+        <li>
+          <span class="cross-icon">✖</span>
+          <span><strong>No Advertising:</strong> Universal Desktop Lyrics is ad-free and will remain ad-free forever.</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Section 5: Open Source & Contact -->
+    <article class="legal-card">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        5. Open Source Verification & Inquiries
+      </h2>
+      <p>
+        Because trust requires transparency, Universal Desktop Lyrics is 100% open-source software distributed under the <strong>MIT License</strong>.
+      </p>
+      <p>
+        You can inspect every line of source code, verify all network endpoints, and build the binaries yourself directly from the official repository:
+      </p>
+      <p>
+        👉 <strong><a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener" class="legal-link">https://github.com/Diwasdh/Desktop-Lyrics</a></strong>
+      </p>
+      <p>
+        If you have any questions or security concerns regarding this Privacy Policy, please file an issue or contact the maintainer:
+      </p>
+      <ul>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>GitHub Issues:</strong> <a href="https://github.com/Diwasdh/Desktop-Lyrics/issues" target="_blank" rel="noopener" class="legal-link">Open a Discussion / Issue</a></span>
+        </li>
+        <li>
+          <span class="check-icon">✔</span>
+          <span><strong>Maintainer:</strong> Diwas Dhakal (<a href="https://github.com/Diwasdh" target="_blank" rel="noopener" class="legal-link">@Diwasdh</a>)</span>
+        </li>
+      </ul>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="logo_icon.svg" alt="Desktop Lyrics Logo" class="footer-logo">
+        <span class="footer-name">Desktop Lyrics</span>
+      </div>
+      <p class="footer-copy">
+        Crafted with ❤️ by <a href="https://github.com/Diwasdh" target="_blank" rel="noopener">Diwas Dhakal
+          (Diwasdh)</a>. Licensed under the <a href="https://github.com/Diwasdh/Desktop-Lyrics/blob/main/LICENSE"
+          target="_blank" rel="noopener">MIT License</a>.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html" style="color: #fff; font-weight: 600;">Privacy Policy</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics/releases" target="_blank" rel="noopener">Releases</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
