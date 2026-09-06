@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.desktoplyrics.app",
+  "productName": "Desktop Lyrics",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "logo_icon.png",
+    "logo_icon.svg",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "native/win-media-bridge.exe",
+      "to": "native/win-media-bridge.exe"
+    },
+    {
+      "from": "logo_icon.png",
+      "to": "logo_icon.png"
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      },
+      {
+        "target": "portable",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "icon": "logo_icon.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Desktop Lyrics"
+  }
+}

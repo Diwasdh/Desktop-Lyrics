@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202643"/>
+      <stop offset="0.55" stop-color="#11162c"/>
+      <stop offset="1" stop-color="#080b17"/>
+    </linearGradient>
+    <linearGradient id="note" x1="0.1" y1="1" x2="0.9" y2="0">
+      <stop offset="0" stop-color="#4edcff"/>
+      <stop offset="0.48" stop-color="#6955ff"/>
+      <stop offset="1" stop-color="#ff45ae"/>
+    </linearGradient>
+    <linearGradient id="lyrics" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c9c7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="210" fill="#090c17"/>
+  <rect x="112" y="112" width="800" height="800" rx="175" fill="url(#bg)" stroke="#303756" stroke-width="3" filter="url(#shadow)"/>
+
+  <!-- subtle ambient glow -->
+  <circle cx="380" cy="660" r="145" fill="#5365ff" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="700" cy="360" r="180" fill="#d84cff" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- musical note -->
+  <path d="M500 290 C500 268 520 254 540 263 L702 350 C720 360 718 386 700 395 L638 425 C616 435 592 424 592 402 L592 625 C592 690 542 742 478 742 C423 742 378 706 378 658 C378 607 425 570 478 570 C489 570 500 572 510 576 L510 290 Z"
+        fill="url(#note)"/>
+
+  <!-- lyric lines -->
+  <g fill="url(#lyrics)">
+    <rect x="626" y="468" width="230" height="25" rx="12.5"/>
+    <rect x="626" y="526" width="205" height="25" rx="12.5"/>
+    <rect x="626" y="584" width="174" height="25" rx="12.5"/>
+    <rect x="626" y="642" width="125" height="25" rx="12.5"/>
+  </g>
+</svg>
