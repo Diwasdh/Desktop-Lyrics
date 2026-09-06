@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Desktop Lyrics — Synced Lyrics Overlay for Windows</title>
+  <meta name="description" content="A universal, synchronized desktop lyrics overlay for Windows 10 & 11. Automatically syncs line-by-line lyrics from Spotify, Chrome, Apple Music, YouTube, and VLC.">
+  <meta name="keywords" content="desktop lyrics, synchronized lyrics, windows lyrics overlay, spotify lyrics, dynamic island windows, karaoke desktop app">
+  <meta name="author" content="Diwas Dhakal (Diwasdh)">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Universal Desktop Lyrics for Windows">
+  <meta property="og:description" content="Sync and display floating line-by-line lyrics of songs playing anywhere on your PC. Dynamic Island, Apple Music Canvas, and Ghost Mode.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo_icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo_icon.svg">
+  <link rel="alternate icon" href="logo_icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Aura Lights -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <img src="logo_icon.svg" alt="Desktop Lyrics Logo" class="nav-logo">
+        <span class="nav-title">Desktop Lyrics</span>
+        <span class="nav-badge">v1.0</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#modes">Modes</a>
+        <a href="#shortcuts">Shortcuts</a>
+        <a href="#download" class="nav-cta">Download</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener" class="nav-github" title="GitHub Repository">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>Star</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Windows 10 & 11 Media Integration</span>
+      </div>
+
+      <h1 class="hero-title">
+        Synced Lyrics for <span class="gradient-text">Any Music</span> Playing on Your PC.
+      </h1>
+
+      <p class="hero-subtitle">
+        Automatically syncs line-by-line scrolling lyrics from Spotify, Chrome, Apple Music, YouTube, and VLC. Featuring an ultra-slim Top Dynamic Island, kinetic Apple Music canvas, and zero-distraction Click-Through Ghost Mode.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Download for Windows</span>
+        </a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener" class="btn btn-glass">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Free & Open Source</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">&lt; 15 MB</span>
+          <span class="stat-label">Native RAM Footprint</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">0 Logins</span>
+          <span class="stat-label">No Extension Required</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Desktop Preview Mockup -->
+    <div class="hero-preview" id="demo">
+      <div class="mockup-window">
+        <div class="mockup-top-island">
+          <div class="island-sim-pill" id="islandSimPill">
+            <div class="island-sim-grip">⋮⋮</div>
+            <div class="island-sim-text" id="islandSimText">There's a fire starting in my heart</div>
+            <div class="island-sim-controls">
+              <button class="sim-btn" id="simPlayPauseBtn" title="Play/Pause">⏸</button>
+              <button class="sim-btn" id="simModeToggleBtn" title="Switch Mode">⛶</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-screen">
+          <div class="simulator-mode-tabs">
+            <button class="sim-tab active" data-mode="island">Top Dynamic Island</button>
+            <button class="sim-tab" data-mode="widget">Mini Widget</button>
+            <button class="sim-tab" data-mode="canvas">Full Lyrics Canvas</button>
+            <button class="sim-tab" data-mode="compact">Compact Bar</button>
+          </div>
+
+          <!-- Interactive Simulator Display Area -->
+          <div class="simulator-display" id="simulatorDisplay">
+            <!-- Simulated Widget View -->
+            <div class="sim-view sim-widget-view hidden" id="viewWidget">
+              <div class="sim-widget-card">
+                <div class="sim-art-box">
+                  <img src="logo_icon.svg" alt="Album Art" class="sim-album-art">
+                  <div class="sim-playing-pulse"></div>
+                </div>
+                <div class="sim-widget-info">
+                  <div class="sim-active-line" id="widgetActiveLine">Rolling in the Deep</div>
+                  <div class="sim-subline" id="widgetSubline">Adele — 21</div>
+                  <div class="sim-progress-bar"><div class="sim-progress-fill" id="widgetProgress"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Simulated Canvas View -->
+            <div class="sim-view sim-canvas-view hidden" id="viewCanvas">
+              <div class="sim-canvas-lines" id="canvasLines">
+                <div class="sim-lyric-line past">There's a fire starting in my heart</div>
+                <div class="sim-lyric-line past">Reaching a fever pitch, it's bringing me out the dark</div>
+                <div class="sim-lyric-line active glow">Finally I can see you crystal clear</div>
+                <div class="sim-lyric-line future">Go 'head and sell me out and I'll lay your ship bare</div>
+                <div class="sim-lyric-line future">See how I'll leave with every piece of you</div>
+              </div>
+            </div>
+
+            <!-- Simulated Island View (Default) -->
+            <div class="sim-view sim-island-view active" id="viewIsland">
+              <div class="island-instruction">
+                <span class="island-tag">TOP FLUSH DOCK</span>
+                <h3>Top Dynamic Island Mode</h3>
+                <p>Floats flush at the top center of your screen. Click anywhere on the text to snap back to the top-middle.</p>
+                <div class="island-sim-badge">Click play/pause on the island above to test live sync!</div>
+              </div>
+            </div>
+
+            <!-- Simulated Compact View -->
+            <div class="sim-view sim-compact-view hidden" id="viewCompact">
+              <div class="sim-compact-bar">
+                <img src="logo_icon.svg" class="sim-compact-art" alt="Art">
+                <span class="sim-compact-text">Finally I can see you crystal clear</span>
+                <button class="sim-compact-play">⏸</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Universal Players Compatibility Banner -->
+  <section class="players-section">
+    <div class="section-container">
+      <p class="players-lead">Natively captures audio streams from any desktop app or browser</p>
+      <div class="players-grid">
+        <div class="player-pill"><span class="player-icon">🟢</span> Spotify Desktop</div>
+        <div class="player-pill"><span class="player-icon">🔴</span> YouTube / Chrome</div>
+        <div class="player-pill"><span class="player-icon">🔵</span> Microsoft Edge</div>
+        <div class="player-pill"><span class="player-icon">🟣</span> Apple Music</div>
+        <div class="player-pill"><span class="player-icon">🟠</span> VLC Media Player</div>
+        <div class="player-pill"><span class="player-icon">🦊</span> Firefox</div>
+        <div class="player-pill"><span class="player-icon">🦁</span> Brave Browser</div>
+        <div class="player-pill"><span class="player-icon">🎵</span> Tidal & Deezer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERED FOR WINDOWS</span>
+        <h2 class="section-title">Pure Music Experience. Zero Clutter.</h2>
+        <p class="section-subtitle">Everything you need from a modern lyrics companion, built into a lightweight native desktop overlay.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>Native Windows GSMTC</h3>
+          <p>Connects directly to the Windows WinRT System Media Transport API. No browser extensions, token configurations, or login accounts required.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="5" width="16" height="14" rx="7"/>
+              <line x1="12" y1="10" x2="12" y2="14"/>
+            </svg>
+          </div>
+          <h3>Top Dynamic Island</h3>
+          <p>Docks flush against the top edge of your monitor. Title bar completely dissolves, giving you pure synchronized lyrics with zero distractions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Ghost Click-Through</h3>
+          <p>Play games, write code, or browse the web while lyrics float over your apps. Mouse clicks pass through seamlessly without interruption.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>LRCLIB Synced Engine</h3>
+          <p>Synchronizes millisecond timestamps with smart YouTube video title cleaning, instrumental break indicators, and instant local caching.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3>Hidden from Taskbar</h3>
+          <p>Lives in your System Tray notification area. Keeps your taskbar clean with quick right-click mode switching, playback controls, and toggles.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3>Transparent Glass Mode</h3>
+          <p>Toggle between solid frosted glass card and pure floating transparent text that blends directly over your wallpaper or active applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four Modes Showcase -->
+  <section class="modes-section" id="modes">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">CUSTOMIZABLE VIEWS</span>
+        <h2 class="section-title">Four Tailored Display Modes</h2>
+        <p class="section-subtitle">Switch seamlessly based on what you are doing — gaming, working, or singing along.</p>
+      </div>
+
+      <div class="modes-carousel">
+        <div class="mode-card featured">
+          <div class="mode-tag">RECOMMENDED</div>
+          <h3>🏝️ Top Dynamic Island</h3>
+          <p>Compact 36px bar docked flush at the top center of your desktop. Title bar disappears, leaving glowing synchronized lyrics that snap back on click.</p>
+          <div class="mode-meta">Best for: Daily desktop use, gaming, dual monitors</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-tag">MINI CARD</div>
+          <h3>🪟 Floating Mini Widget</h3>
+          <p>Compact frosted glass card featuring album artwork, active lyric line, next line preview, and intuitive playback controls.</p>
+          <div class="mode-meta">Best for: Corner desktop placement</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-tag">APPLE MUSIC STYLE</div>
+          <h3>📜 Full Lyrics Canvas</h3>
+          <p>Apple Music-inspired kinetic scrolling canvas with glowing active line, past line dimming, time counters, and manual scroll detection.</p>
+          <div class="mode-meta">Best for: Deep listening & karaoke sessions</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-tag">ULTRA SLIM</div>
+          <h3>💊 Compact Bar Mode</h3>
+          <p>Slim horizontal pill with album art fixed on the left, lyrics locked in the center, and play/pause on the right.</p>
+          <div class="mode-meta">Best for: Bottom or top desktop placement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shortcuts Section -->
+  <section class="shortcuts-section" id="shortcuts">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">GLOBAL HOTKEYS</span>
+        <h2 class="section-title">Instant Control At Your Fingertips</h2>
+        <p class="section-subtitle">Operate lyrics overlay without switching away from your current active window.</p>
+      </div>
+
+      <div class="shortcuts-grid">
+        <div class="shortcut-box">
+          <div class="keys">
+            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>
+          </div>
+          <h4>Toggle Ghost Mode (Click-Through)</h4>
+          <p>Enable or disable mouse click-through anytime from anywhere on your PC.</p>
+        </div>
+
+        <div class="shortcut-box">
+          <div class="keys">
+            <kbd>Space</kbd>
+          </div>
+          <h4>Play / Pause</h4>
+          <p>Toggle playback on current active Windows media player.</p>
+        </div>
+
+        <div class="shortcut-box">
+          <div class="keys">
+            <kbd>Ctrl</kbd> + <kbd>→</kbd> / <kbd>←</kbd>
+          </div>
+          <h4>Next / Previous Track</h4>
+          <p>Skip tracks on Spotify, Chrome, or Apple Music instantly.</p>
+        </div>
+
+        <div class="shortcut-box">
+          <div class="keys">
+            <kbd>Click</kbd> on Dynamic Island
+          </div>
+          <h4>Snap to Top Middle</h4>
+          <p>Instantly centers and docks the island flush against the top of your screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download-section" id="download">
+    <div class="section-container">
+      <div class="download-card">
+        <div class="download-content">
+          <span class="section-tag">GET STARTED TODAY</span>
+          <h2 class="download-title">Download Desktop Lyrics</h2>
+          <p class="download-description">
+            Free, lightweight, and open source for Windows 10 & 11 (64-bit). No accounts or telemetry.
+          </p>
+
+          <div class="download-options">
+            <a href="https://github.com/Diwasdh/Desktop-Lyrics/releases" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Download Setup Installer (.exe)</span>
+            </a>
+
+            <a href="https://github.com/Diwasdh/Desktop-Lyrics/releases" target="_blank" rel="noopener" class="btn btn-glass btn-large">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+              <span>Download Portable (.exe)</span>
+            </a>
+          </div>
+
+          <div class="download-meta">
+            <span>Supports Windows 10 (1809+) & Windows 11</span>
+            <span>•</span>
+            <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener">Build from Source on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="logo_icon.svg" alt="Desktop Lyrics Logo" class="footer-logo">
+        <span class="footer-name">Desktop Lyrics</span>
+      </div>
+      <p class="footer-copy">
+        Crafted with ❤️ by <a href="https://github.com/Diwasdh" target="_blank" rel="noopener">Diwas Dhakal (Diwasdh)</a>. Licensed under the <a href="https://github.com/Diwasdh/Desktop-Lyrics/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>.
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/Diwasdh/Desktop-Lyrics/blob/main/DEVELOPER_GUIDE.md" target="_blank" rel="noopener">Developer Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
