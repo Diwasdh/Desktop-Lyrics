@@ -1081,6 +1081,53 @@ kbd {
 }
 
 /* ==========================================================
+   FAQ SECTION (SEO RICH SNIPPETS)
+   ========================================================== */
+.faq-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.faq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 28px 30px;
+  backdrop-filter: blur(24px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.faq-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.faq-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ==========================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================== */
 @media (max-width: 1024px) {
@@ -1115,6 +1162,9 @@ kbd {
     grid-template-columns: 1fr;
   }
   .shortcuts-grid {
+    grid-template-columns: 1fr;
+  }
+  .faq-grid {
     grid-template-columns: 1fr;
   }
   .nav-links a:not(.nav-cta) {
