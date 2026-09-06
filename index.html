@@ -53,7 +53,7 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.0">
 
   <!-- Structured Data (Schema.org JSON-LD for Google Rich Results) -->
   <script type="application/ld+json">
@@ -498,44 +498,105 @@
     </div>
   </section>
 
-  <!-- FAQ Section (Google Search Engine Rich Results) -->
+  <!-- FAQ Section (Search Engine Rich Results & Themed Help) -->
   <section class="faq-section" id="faq">
     <div class="section-container">
       <div class="section-header">
-        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
-        <h2 class="section-title">Everything You Need to Know</h2>
-        <p class="section-subtitle">Got questions about setup, supported media players, or keyboard shortcuts? We've got answers.</p>
+        <span class="section-tag">HELP & ANSWERS</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about Desktop Lyrics, setup, supported players, and controls.</p>
       </div>
 
       <div class="faq-grid">
+        <!-- FAQ 1: Music Players -->
         <div class="faq-card">
-          <h3>🎵 Which music players are supported?</h3>
-          <p>Desktop Lyrics automatically detects audio playback from Spotify (Desktop & Web), Apple Music, Google Chrome, Microsoft Edge, Brave, YouTube, VLC, and Windows Media Player without requiring any browser extensions or login tokens.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <span class="faq-badge">COMPATIBILITY</span>
+          </div>
+          <h3>Which music players are supported?</h3>
+          <p>Desktop Lyrics automatically detects audio playback from <strong>Spotify</strong> (Desktop & Web), <strong>Apple Music</strong>, <strong>Google Chrome</strong>, <strong>Microsoft Edge</strong>, <strong>Brave</strong>, <strong>YouTube</strong>, <strong>VLC</strong>, and <strong>Windows Media Player</strong> without requiring any browser extensions or login tokens.</p>
         </div>
 
+        <!-- FAQ 2: Dynamic Island -->
         <div class="faq-card">
-          <h3>🏝️ What is Top Dynamic Island mode?</h3>
-          <p>Top Dynamic Island transforms the application into a sleek 36px capsule docked flush against the top-center of your screen. The window borders and titlebar dissolve completely, leaving glowing synchronized lyrics. A single click snaps it back to dead-center.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="6" width="18" height="12" rx="6"></rect>
+                <circle cx="9" cy="12" r="1.5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <span class="faq-badge">TOP FLUSH DOCK</span>
+          </div>
+          <h3>What is Top Dynamic Island mode?</h3>
+          <p>It transforms the app into a sleek 36px capsule docked flush against the top edge of your screen. Window borders and controls completely dissolve, leaving pure glowing lyrics. Clicking the island instantly centers and snaps it back to the top-middle.</p>
         </div>
 
+        <!-- FAQ 3: Ghost Mode -->
         <div class="faq-card">
-          <h3>👻 How does Ghost Click-Through Mode work?</h3>
-          <p>Pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> on Mac) enables Click-Through. Your mouse clicks pass directly through the lyrics overlay to whatever window or game is underneath without interruption.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"></path>
+                <circle cx="9" cy="10" r="1" fill="currentColor"></circle>
+                <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <span class="faq-badge">HOTKEY: CTRL+SHIFT+X</span>
+          </div>
+          <h3>How does Ghost Click-Through Mode work?</h3>
+          <p>Pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> on Mac) enables Ghost Mode. Mouse clicks pass straight through the lyrics overlay to games, code editors, or browsers underneath without any interruption.</p>
         </div>
 
+        <!-- FAQ 4: Performance -->
         <div class="faq-card">
-          <h3>⚡ Does it consume high CPU or battery?</h3>
-          <p>No. Desktop Lyrics utilizes native OS system media APIs (WinRT GSMTC on Windows, native osascript on macOS) with zero heavy polling, keeping CPU and memory consumption minimal even during intense gaming.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span class="faq-badge">&lt; 0.5% CPU USAGE</span>
+          </div>
+          <h3>Does it consume high CPU or battery?</h3>
+          <p>No. Desktop Lyrics is built in native C# WinRT GSMTC on Windows and native scripting on macOS. It operates on OS event hooks rather than continuous screen capture, keeping CPU and RAM consumption practically invisible.</p>
         </div>
 
+        <!-- FAQ 5: Privacy -->
         <div class="faq-card">
-          <h3>🔒 Do I need an account or API token?</h3>
-          <p>No accounts, logins, or API keys are required. Desktop Lyrics connects directly to open LRCLIB database and local playback sessions, maintaining 100% privacy without telemetry.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <span class="faq-badge">100% PRIVATE</span>
+          </div>
+          <h3>Do I need an account or API token?</h3>
+          <p>No logins, passwords, or personal credentials are required. Desktop Lyrics connects directly to the open LRCLIB database and your local system media transport, keeping all data on your device with <strong>zero telemetry</strong>.</p>
         </div>
 
+        <!-- FAQ 6: Open Source -->
         <div class="faq-card">
-          <h3>💻 Is Desktop Lyrics free and open source?</h3>
-          <p>Yes. Desktop Lyrics is 100% free and open-source software licensed under the MIT License. The complete source code is available on GitHub for both Windows and macOS.</p>
+          <div class="faq-card-top">
+            <div class="faq-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <span class="faq-badge">MIT LICENSE</span>
+          </div>
+          <h3>Is Desktop Lyrics free and open source?</h3>
+          <p>Yes. Desktop Lyrics is 100% free and open-source under the permissive <strong>MIT License</strong>. The complete source code, native bridges, and release pipelines are open for everyone on GitHub.</p>
         </div>
       </div>
     </div>
