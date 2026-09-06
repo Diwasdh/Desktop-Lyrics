@@ -1,13 +1,14 @@
 # Universal Desktop Lyrics 🎵
 
-A lightweight, universal desktop synced lyrics overlay for Windows 10 & 11. It automatically detects music playing anywhere on your PC (Spotify, Chrome, Edge, Apple Music, VLC, Firefox, etc.) and synchronizes real-time, line-by-line scrolling lyrics.
+A lightweight, universal desktop synced lyrics overlay for **Windows 10 & 11** and **macOS (Apple Silicon & Intel)**. It automatically detects music playing anywhere on your computer (Spotify, Apple Music, Chrome, Edge, YouTube, VLC, Firefox, etc.) and synchronizes real-time, line-by-line scrolling lyrics.
 
 ---
 
 ## ✨ Features
 
-- **Universal Windows Media Detection (GSMTC)**:
-  - Uses Windows native WinRT `GlobalSystemMediaTransportControlsSessionManager` to capture music playing in any application without any browser extensions or accounts needed.
+- **Cross-Platform Media Detection**:
+  - **Windows (GSMTC)**: Uses native WinRT `GlobalSystemMediaTransportControlsSessionManager` to capture music playing in any application without any browser extensions or accounts needed.
+  - **macOS (Spotify & Apple Music)**: Native `osascript` JXA bridge connecting directly to Spotify and Apple Music with zero extra dependencies.
   - Automatically captures track title, artist, album, album art thumbnail, playback state (Play/Pause), and exact millisecond timeline position.
   - Intelligent song title cleaner that strips YouTube suffixes like `(Official Video)`, `[Lyrics]`, `(feat. ...)`, and clean artist tags.
 
@@ -29,10 +30,10 @@ A lightweight, universal desktop synced lyrics overlay for Windows 10 & 11. It a
 - **Desktop Overlay Controls**:
   - **Always on Top**: Pinned on top of your windows, games, and apps.
   - **Transparent Mode**: Toggle between frosted glass card and pure floating transparent lyrics text.
-  - **Click-Through (Ghost Mode)**: Click right through the lyrics overlay without interrupting your games or workflow (`Ctrl + Shift + X`).
-  - **Hidden from Taskbar**: Runs cleanly as a desktop overlay without cluttering your Windows Taskbar (`skipTaskbar: true`).
+  - **Click-Through (Ghost Mode)**: Click right through the lyrics overlay without interrupting your games or workflow (`Ctrl + Shift + X` on Windows / `Cmd + Shift + X` on Mac).
+  - **Hidden from Taskbar / Dock**: Runs cleanly as a desktop overlay without cluttering your Windows Taskbar or macOS Dock.
   - **Customizable Opacity & Themes**: Deep Glass, Neon Aurora, Cyberpunk Neon, Midnight Minimal, and OLED Black.
-  - **System Tray Integration**: Background tray menu to toggle overlay, switch modes, pin/unpin, and control playback.
+  - **System Tray & Menu Bar Integration**: Background tray menu to toggle overlay, switch modes, pin/unpin, and control playback.
   - **Manual Search & Correction**: Instant search dialog to find lyrics for rare, obscure, or custom tracks.
 
 ---
@@ -44,7 +45,7 @@ A lightweight, universal desktop synced lyrics overlay for Windows 10 & 11. It a
 # Install dependencies
 npm install
 
-# Build the C# bridge, Electron scripts, and React frontend
+# Build the bridge, Electron scripts, and React frontend
 npm run build
 
 # Start the desktop application
@@ -53,8 +54,11 @@ npm start
 # Or run in development mode with live rebuilds
 npm run dev
 
-# Package standalone installer & portable .exe
-npm run dist
+# Package Windows installer & portable (.exe)
+npm run dist:win
+
+# Package macOS DMG & ZIP (.dmg) - Runs natively on macOS or via GitHub Actions
+npm run dist:mac
 ```
 
 ### 2. Controls & Shortcuts
