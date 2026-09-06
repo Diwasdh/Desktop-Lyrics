@@ -94,3 +94,10 @@ Desktop Lyrics/
 
 For in-depth architecture diagrams, IPC protocols, build pipelines, and contribution guides, see the [Developer Guide](DEVELOPER_GUIDE.md).
 
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE) — see the [LICENSE](LICENSE) file for details.
+
+

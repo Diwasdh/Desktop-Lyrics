@@ -23,7 +23,7 @@
     "spotify",
     "lrclib"
   ],
-  "author": "",
+  "author": "Diwas Dhakal (https://github.com/Diwasdh)",
   "license": "MIT",
   "dependencies": {
     "lucide-react": "^1.16.0",
