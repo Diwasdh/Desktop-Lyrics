@@ -5,14 +5,16 @@
   "main": "dist-electron/main.js",
   "type": "module",
   "scripts": {
-    "build:bridge": "powershell -ExecutionPolicy Bypass -File ./native/build-bridge.ps1",
+    "build:bridge": "node scripts/build-bridge.js",
     "build:electron": "node build-electron.js",
     "build:renderer": "vite build",
     "build": "npm run build:bridge && npm run build:electron && npm run build:renderer",
     "start": "electron .",
     "dev": "npm run build && electron .",
     "dist": "npm run build && npx electron-builder --config electron-builder.json",
-    "dist:portable": "npm run build && npx electron-builder --win portable --config electron-builder.json"
+    "dist:win": "npm run build && npx electron-builder --win --config electron-builder.json",
+    "dist:portable": "npm run build && npx electron-builder --win portable --config electron-builder.json",
+    "dist:mac": "npm run build && npx electron-builder --mac --config electron-builder.json"
   },
   "keywords": [
     "lyrics",

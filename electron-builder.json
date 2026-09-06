@@ -14,10 +14,6 @@
   ],
   "extraResources": [
     {
-      "from": "native/win-media-bridge.exe",
-      "to": "native/win-media-bridge.exe"
-    },
-    {
       "from": "logo_icon.png",
       "to": "logo_icon.png"
     }
@@ -37,7 +33,51 @@
         ]
       }
     ],
-    "icon": "logo_icon.png"
+    "icon": "logo_icon.png",
+    "extraResources": [
+      {
+        "from": "native/win-media-bridge.exe",
+        "to": "native/win-media-bridge.exe"
+      }
+    ]
+  },
+  "mac": {
+    "target": [
+      {
+        "target": "dmg",
+        "arch": [
+          "x64",
+          "arm64"
+        ]
+      },
+      {
+        "target": "zip",
+        "arch": [
+          "x64",
+          "arm64"
+        ]
+      }
+    ],
+    "icon": "logo_icon.png",
+    "category": "public.app-category.music",
+    "hardenedRuntime": false,
+    "gatekeeperAssess": false,
+    "darkModeSupport": true
+  },
+  "dmg": {
+    "title": "Desktop Lyrics",
+    "contents": [
+      {
+        "x": 130,
+        "y": 220
+      },
+      {
+        "x": 410,
+        "y": 220,
+        "type": "link",
+        "path": "/Applications"
+      }
+    ]
   },
   "nsis": {
     "oneClick": false,

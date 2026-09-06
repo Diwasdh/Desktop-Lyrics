@@ -3,6 +3,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn, ChildProcess } from 'child_process';
 import * as fs from 'fs';
+import { MacMediaBridge } from './mac-media-bridge.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,6 +11,7 @@ const __dirname = path.dirname(__filename);
 let mainWindow: BrowserWindow | null = null;
 let tray: Tray | null = null;
 let bridgeProcess: ChildProcess | null = null;
+let macMediaBridge: MacMediaBridge | null = null;
 let isClickThrough = false;
 let isQuitting = false;
 
@@ -254,6 +256,19 @@ function initTray() {
 }
 
 function startMediaBridge() {
+  if (process.platform === 'darwin') {
+    if (!macMediaBridge) {
+      macMediaBridge = new MacMediaBridge(() => mainWindow);
+    }
+    macMediaBridge.start();
+    return;
+  }
+
+  if (process.platform !== 'win32') {
+    console.log('[MediaBridge] Platform not supported for native bridge:', process.platform);
+    return;
+  }
+
   const bridgeExe = getBridgePath();
   if (!fs.existsSync(bridgeExe)) {
     console.error('win-media-bridge.exe not found at:', bridgeExe);
@@ -295,7 +310,7 @@ function startMediaBridge() {
     bridgeProcess = null;
     // Auto restart bridge if app is still alive
     setTimeout(() => {
-      if (mainWindow && !mainWindow.isDestroyed() && !bridgeProcess) {
+      if (mainWindow && !mainWindow.isDestroyed() && !bridgeProcess && process.platform === 'win32') {
         console.log('Restarting Windows Media Bridge...');
         startMediaBridge();
       }
@@ -304,6 +319,11 @@ function startMediaBridge() {
 }
 
 function sendBridgeCommand(cmd: string) {
+  if (process.platform === 'darwin' && macMediaBridge) {
+    macMediaBridge.sendCommand(cmd);
+    return;
+  }
+
   if (bridgeProcess && bridgeProcess.stdin && !bridgeProcess.killed) {
     try {
       bridgeProcess.stdin.write(cmd + '\n');
@@ -405,6 +425,9 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', () => {
+  if (macMediaBridge) {
+    macMediaBridge.stop();
+  }
   if (bridgeProcess) {
     try {
       bridgeProcess.kill();
@@ -417,6 +440,9 @@ app.on('window-all-closed', () => {
 
 app.on('will-quit', () => {
   globalShortcut.unregisterAll();
+  if (macMediaBridge) {
+    macMediaBridge.stop();
+  }
   if (bridgeProcess) {
     try {
       bridgeProcess.kill();
